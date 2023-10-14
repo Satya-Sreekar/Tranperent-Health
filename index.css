@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  margin: 0 auto;
+  padding: 10px;
+  width: 1200px;
+  background-color: white;
+}
+
+.container {
+  padding: 20px;
+  border: 1px solid #ddd; 
+  margin-bottom: 20px; 
+  background-color: #d3d3d3;
+}
+
+.container h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.container ul li {
+  display: inline;
+  margin-left: 10px;
+}
+
+.container ul li:first-child {
+  margin-left: 0;
+}
+
+.roadmap {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.roadmap button {
+  padding: 15px 30px; /* Increase button size */
+  background-color: powderblue;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 -5px; /* Remove gap between buttons */
+  font-size: 18px; /* Increase button text size */
+}
+
+.roadmap button:hover {
+  background-color: #0099cc;
+}

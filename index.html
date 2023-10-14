@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Healthcare Information</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+<div class="box">
+  <div class="container">
+    <img src="KL.jpg">
+    <ul>
+      <li><a href="http://127.0.0.1:5000/text">Text Demo</a></li>
+      <li><a href="http://127.0.0.1:5000/voice">Voice Demo</a></li>
+      <li><a href="#">Health Insurance</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+
+  <div class="roadmap">
+    <button onclick="showStartHere()">Start Here</button>
+    <button onclick="showInsuranceCareer()">Insurance Career</button>
+    <button onclick="showCostEstimates()">Cost Estimates</button>
+  </div>
+
+  <div class="step" id="start-here">
+    <h2>Start Here</h2>
+    <p>Choose the Type of Procedure to Compare Costs. Compare the estimated cost of the healthcare procedure by medical or dental providers.</p>
+    <button onclick="showInsuranceCareer()">Choose Medical Procedures</button>
+  </div>
+
+  <div class="step" id="insurance-career" style="display: none;">
+    <h2>Insurance Career</h2>
+    <p>Information about insurance career goes here.</p>
+    <button onclick="showCostEstimates()">Next</button>
+  </div>
+
+  <div class="step" id="cost-estimates" style="display: none;">
+    <h2>Cost Estimates</h2>
+    <p>Information about cost estimates goes here.</p>
+  </div>
+</div>
+
+<script>
+  function hideAllSteps() {
+    const steps = document.querySelectorAll('.step');
+    steps.forEach(step => step.style.display = 'none');
+  }
+  
+  function showStartHere() {
+    hideAllSteps();
+    document.getElementById('start-here').style.display = 'block';
+    document.getElementById('insurance-career').style.display = 'none';
+    document.getElementById('cost-estimates').style.display = 'none';
+  }
+  
+  function showInsuranceCareer() {
+    hideAllSteps();
+    document.getElementById('insurance-career').style.display = 'block';
+  }
+  
+  function showCostEstimates() {
+    hideAllSteps();
+    document.getElementById('cost-estimates').style.display = 'block';
+  }
+  
+  // Initially show the Start Here step
+  showStartHere();
+</script>
+
+</body>
+</html>
