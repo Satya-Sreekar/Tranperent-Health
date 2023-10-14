@@ -2,20 +2,22 @@
 <html>
 <head>
   <title>Healthcare Information</title>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 <div class="box">
   <div class="container">
-    <img src="KL.jpg">
+    <img src="KL.png">
+    <h1>HACKATHON</h1>
     <ul>
-      <li><a href="http://127.0.0.1:5000/text">Text Demo</a></li>
-      <li><a href="http://127.0.0.1:5000/voice">Voice Demo</a></li>
+      <li><a href="#">Health Costs</a></li>
+      <li><a href="#">Quality of Care</a></li>
       <li><a href="#">Health Insurance</a></li>
       <li><a href="#">About</a></li>
     </ul>
   </div>
-
+  <h2>Health Costs</h2>
+  <p>Compare the estimated cost for outpatient healthcare services in and around Hyderabad.</p>
   <div class="roadmap">
     <button onclick="showStartHere()">Start Here</button>
     <button onclick="showInsuranceCareer()">Insurance Career</button>
@@ -40,32 +42,7 @@
   </div>
 </div>
 
-<script>
-  function hideAllSteps() {
-    const steps = document.querySelectorAll('.step');
-    steps.forEach(step => step.style.display = 'none');
-  }
-  
-  function showStartHere() {
-    hideAllSteps();
-    document.getElementById('start-here').style.display = 'block';
-    document.getElementById('insurance-career').style.display = 'none';
-    document.getElementById('cost-estimates').style.display = 'none';
-  }
-  
-  function showInsuranceCareer() {
-    hideAllSteps();
-    document.getElementById('insurance-career').style.display = 'block';
-  }
-  
-  function showCostEstimates() {
-    hideAllSteps();
-    document.getElementById('cost-estimates').style.display = 'block';
-  }
-  
-  // Initially show the Start Here step
-  showStartHere();
-</script>
+<script src="index.js"></script>
 
 </body>
 </html>
