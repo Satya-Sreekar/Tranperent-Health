@@ -12,15 +12,14 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
-  border: 1px solid #ddd; 
-  margin-bottom: 20px; 
+  border: 1px solid #ddd;
+  margin-bottom: 1px;
   background-color: #d3d3d3;
-}
-
-.container h1 {
-  text-align: center;
-  margin: 0;
 }
 
 .container ul {
@@ -28,15 +27,31 @@ body {
   padding: 0;
   margin: 0;
   text-align: right;
+  margin-top: 120px;
 }
 
 .container ul li {
   display: inline;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .container ul li:first-child {
   margin-left: 0;
+}
+
+.container img {
+  max-width: 200px;
+}
+
+.container h1 {
+  margin-left: right;
+  margin: 0;
+}
+
+.box h2 {
+  text-align: center;
+  margin: 0;
+  margin-top: 20px;
 }
 
 .roadmap {
@@ -46,16 +61,47 @@ body {
 }
 
 .roadmap button {
-  padding: 15px 30px; /* Increase button size */
+  padding: 15px 30px;
   background-color: powderblue;
   color: #333;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 -5px; /* Remove gap between buttons */
-  font-size: 18px; /* Increase button text size */
+  margin: 0 -5px;
+  font-size: 18px;
 }
 
 .roadmap button:hover {
   background-color: #0099cc;
+}
+
+/* Step Sections */
+.step {
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+}
+
+.step h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.step p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.step button {
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.step button:hover {
+  background-color: #ccc;
 }
