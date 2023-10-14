@@ -4,38 +4,41 @@ body {
   padding: 0;
 }
 
-.box {
-  margin: 0 auto;
-  padding: 10px;
-  width: 1200px;
-  background-color: white;
-}
-
 .container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 1px;
+  padding-bottom: 0;
+  padding-bottom: 0;
+  border: 0px solid #ddd;
   background-color: #d3d3d3;
 }
-
-.container ul {
+.container2{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border: 0px solid #ddd;
+  padding-bottom: 5px;
+  padding-right: 15px;
+  margin-bottom: 2px;
+  background-color: #d3d3d3;
+}
+.container2 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
   text-align: right;
-  margin-top: 120px;
+  margin-top: 0px;
 }
 
-.container ul li {
+.container2 ul li {
   display: inline;
   margin-left: 20px;
+  padding:10px;
 }
 
-.container ul li:first-child {
+.container2 ul li:first-child {
   margin-left: 0;
 }
 
@@ -44,14 +47,34 @@ body {
 }
 
 .container h1 {
-  margin-left: right;
-  margin: 0;
+  font-family: Georgia, serif;
 }
 
+.box {
+  margin: 0 auto;
+  padding: 10px;
+  width: 1200px;
+  background-color: white;
+}
+.box h1{
+  color: #981b12;
+  font: 48px Roboto,san-serif;
+}
 .box h2 {
-  text-align: center;
-  margin: 0;
-  margin-top: 20px;
+  text-align: left;
+  margin: 50px 0px 10px;
+  color: #981b12;
+  font: 48px Roboto,san-serif;
+}
+.box h3{
+  color:#981b12;
+  font:26px Roboto,sans-serif;
+  margin:0px 0px 10px;
+}
+.box p{
+  color: #222222;
+  font:24px "Source Sans Pro",Arial,sans-serif;
+  margin: 16px 0px 20px;
 }
 
 .roadmap {
@@ -61,7 +84,7 @@ body {
 }
 
 .roadmap button {
-  padding: 15px 30px;
+  padding: 15px 125px;
   background-color: powderblue;
   color: #333;
   border: none;
@@ -86,6 +109,8 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin-top: 0;
+  color: #ffffff;
+
 }
 
 .step p {
@@ -95,10 +120,11 @@ body {
 
 .step button {
   text-decoration: none;
-  color: #000;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 8px 16px;
+  font: 18px "Source Sans Pro",Arial,sans-serif;
+  color: #fff;
+  background: #324557;
+  margin: 20px;
+  padding: 6px 30px;
   border-radius: 4px;
 }
 

@@ -1,104 +1,35 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Hospital Search</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
+  <meta charset="utf-8">
+  <title>Real-time Speech-to-Text Converter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script>
+    function startRecording() {
+      var recognition = new webkitSpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
 
-        h1 {
-            color: #333;
-        }
+      recognition.onresult = function(event) {
+        var result = event.results[event.results.length - 1];
+        var transcript = result[0].transcript;
+        document.getElementById('text').textContent = transcript;
+      };
 
-        form {
-            margin-top: 20px;
-            display: none;
-        }
+      recognition.onend = function() {
+        document.getElementById('record-button').textContent = 'Start Recording';
+      };
 
-        label {
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"] {
-            width: 200px;
-            padding: 5px;
-        }
-
-        input[type="submit"] {
-            background-color: #3498db;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-            margin-right: 10px;
-        }
-
-        button {
-            background-color: #3498db;
-            color: #fff;
-            font-size: 24px;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-        }
-
-        button i {
-            margin-right: 10px;
-        }
-
-        .location-button {
-            background-color: #3498db;
-            color: #fff;
-            font-size: 24px;
-            padding: 8px 16px;
-            border: none;
-            cursor: pointer;
-            margin-bottom: 10px;
-        }
-    </style>
+      recognition.start();
+    }
+  </script>
 </head>
 <body>
-    <h1>Find the Best Hospital for Your Disease</h1>
-    <button class="location-button" id="location-button" onclick="toggleSearch()">Location</button>
-    <form id="search-form" method="post">
-        <label for="disease">Enter a disease:</label>
-        <input type="text" name="disease" id="disease" required>
-        <input type="submit" value="Search">
-        <button type="button" id="record-button"><i class="fas fa-microphone"></i></button>
-    </form>
+  <h1>Real-time Speech-to-Text Converter</h1>
 
-    <script>
-        function toggleSearch() {
-            const form = document.getElementById('search-form');
-            const locationButton = document.getElementById('location-button');
+  <button onclick="startRecording()" id="record-button"><i class="fas fa-microphone"></i></button>
 
-            form.style.display = (form.style.display === 'none' || form.style.display === '') ? 'block' : 'none';
-            locationButton.style.display = 'none';
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const startButton = document.getElementById('record-button');
-            const diseaseInput = document.getElementById('disease');
-
-            startButton.addEventListener('click', function () {
-                const recognition = new webkitSpeechRecognition();
-                recognition.continuous = true;
-                recognition.interimResults = true;
-
-                recognition.onresult = function (event) {
-                    const result = event.results[event.results.length - 1];
-                    const transcript = result[0].transcript;
-                    diseaseInput.value = transcript;
-                };
-
-                recognition.start();
-            });
-        });
-    </script>
+  <h2>Recognized Text:</h2>
+  <div id="text"></div>
 </body>
 </html>

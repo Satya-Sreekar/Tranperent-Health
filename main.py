@@ -32,11 +32,11 @@ def text():
         # Sort hospitals by score in ascending order
         hospitals.sort(key=lambda x: x[1])
 
-        return render_template("text.html", hospitals=hospitals, disease=disease)
+        return render_template("diseases.html", hospitals=hospitals, disease=disease)
 
-    return render_template("text.html", hospitals=[], disease="")
+    return render_template("diseases.html", hospitals=[], disease="")
 @app.route('/voice')
-def index1():
+def voice():
     return render_template('amaan.html', audio_text=None)
 
 @app.route('/convert', methods=['POST'])
