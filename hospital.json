@@ -1,0 +1,26 @@
+[
+    {
+        "hospital_name": "NIMS",
+        "diseases": {
+            "Flu": {"cost": 200, "rating": 9},
+            "COVID-19": {"cost": 500, "rating": 7},
+            "Appendicitis": {"cost": 1000, "rating": 9}
+        }
+    },
+    {
+        "hospital_name": "APOLLO",
+        "diseases": {
+            "Flu": {"cost": 1075, "rating": 8},
+            "COVID-19": {"cost": 1000, "rating": 7},
+            "Appendicitis": {"cost": 3000, "rating": 9}
+        }
+    },
+    {
+        "hospital_name": "ESI",
+        "diseases": {
+            "Flu": {"cost": 550, "rating": 7},
+            "COVID-19": {"cost": 1100, "rating": 6},
+            "Appendicitis": {"cost": 3200, "rating": 8}
+        }
+    }
+]
