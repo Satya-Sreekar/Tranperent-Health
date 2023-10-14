@@ -53,6 +53,8 @@ def convert():
             except sr.RequestError as e:
                 audio_text = "Error occurred during audio recognition; {0}".format(e)
     return render_template('amaan.html', audio_text=audio_text)
-
+@app.route("/medp")
+def medp():
+    return render_template('medicine_price.html')
 if __name__ == "__main__":
     app.run(debug=True)

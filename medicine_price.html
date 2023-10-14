@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Medicine Prices Comparison (INR)</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +32,22 @@
         }
     </style>
 </head>
+
 <body>
+  <div class="box">
+    <div class="container">
+      <img src="{{ url_for('static', filename='KL.png') }}">
+      <h1>IMPACTECH-2K23</h1>
+    </div>
+    <div class="container2">
+      <ul>
+        <li><a href="/text">Health Costs</a></li>
+        <li><a href="#">Quality of Care</a></li>
+        <li><a href="#">Health Insurance</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+
     <h1>Medicine Prices Comparison (INR)</h1>
 
     <form method="post" onsubmit="searchMedicine(); return false;">
