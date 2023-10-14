@@ -1,58 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Medicine Prices Comparison (INR)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 20px;
-    }
+    <title>Medicine Prices Comparison (INR)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
 
-    h1 {
-      color: #333;
-    }
+        h1 {
+            color: #333;
+        }
 
-    table {
-      width: 80%;
-      margin: 20px auto;
-      border-collapse: collapse;
-    }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            display: none; /* Hide the table initially */
+        }
 
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
-    }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
 
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-  <h1>Medicine Prices Comparison (INR)</h1>
+    <h1>Medicine Prices Comparison (INR)</h1>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Medicine Name</th>
-        <th>Apollo Pharmacy</th>
-        <th>Medplus</th>
-        <th>PharmEasy</th>
-      </tr>
-    </thead>
-    <tbody id="medicineTableBody"></tbody>
-  </table>
+    <form method="post" onsubmit="searchMedicine(); return false;">
+        <label for="medicine">Enter a medicine: </label>
+        <input type="text" id="medicine" name="medicine" required>
+        <input type="submit" value="Search">
+    </form>
 
-  <script>
-    // Embedded JSON data
-    const medicineData = {
-      "medicines": [
-        { "name": "Aspirin", "apollo": 50.00, "medplus": 48.00, "pharmeasy": 45.00 },
-        { "name": "Ibuprofen", "apollo": 70.00, "medplus": 65.00, "pharmeasy": 60.00 },
-        { "name": "Paracetamol", "apollo": 40.00, "medplus": 35.00, "pharmeasy": 38.00 },
+    <table id="medicineTable">
+        <thead>
+            <tr>
+                <th>Medicine Name</th>
+                <th>Apollo Pharmacy</th>
+                <th>Medplus</th>
+                <th>PharmEasy</th>
+            </tr>
+        </thead>
+        <tbody id="medicineTableBody"></tbody>
+    </table>
+
+    <script>
+        // Embedded JSON data
+        const medicineData = {
+            "medicines": [
+                { "name": "Aspirin", "apollo": 50.00, "medplus": 48.00, "pharmeasy": 45.00 },
+                { "name": "Ibuprofen", "apollo": 70.00, "medplus": 65.00, "pharmeasy": 60.00 },
+                { "name": "Paracetamol", "apollo": 40.00, "medplus": 35.00, "pharmeasy": 38.00 },
         { "name": "Amoxicillin", "apollo": 120.00, "medplus": 110.00, "pharmeasy": 105.00 },
         { "name": "Loratadine", "apollo": 80.00, "medplus": 75.00, "pharmeasy": 70.00 },
         { "name": "Omeprazole", "apollo": 150.00, "medplus": 145.00, "pharmeasy": 140.00 },
@@ -81,35 +87,41 @@
         { "name": "Metoprolol", "apollo": 164.00, "medplus": 159.00, "pharmeasy": 154.00 },
         { "name": "Simvastatin", "apollo": 208.00, "medplus": 203.00, "pharmeasy": 198.00 }
         // Add more medicines as needed
-      ]
-    };
+            ]
+        };
 
-    // Function to populate the table with medicine data
-    function populateMedicineTable() {
-      const tableBody = document.getElementById('medicineTableBody');
+        function searchMedicine() {
+            const medicineName = document.getElementById('medicine').value.trim().toLowerCase();
+            const table = document.getElementById('medicineTable');
+            const tableBody = document.getElementById('medicineTableBody');
+            tableBody.innerHTML = ''; // Clear previous results
 
-      medicineData.medicines.forEach(medicine => {
-        const row = document.createElement('tr');
-        const nameCell = document.createElement('td');
-        const apolloCell = document.createElement('td');
-        const medplusCell = document.createElement('td');
-        const pharmeasyCell = document.createElement('td');
+            const medicine = medicineData.medicines.find(m => m.name.toLowerCase() === medicineName);
 
-        nameCell.textContent = medicine.name;
-        apolloCell.textContent = `₹${medicine.apollo.toFixed(2)}`;
-        medplusCell.textContent = `₹${medicine.medplus.toFixed(2)}`;
-        pharmeasyCell.textContent = `₹${medicine.pharmeasy.toFixed(2)}`;
+            if (medicine) {
+                const row = document.createElement('tr');
+                const nameCell = document.createElement('td');
+                const apolloCell = document.createElement('td');
+                const medplusCell = document.createElement('td');
+                const pharmeasyCell = document.createElement('td');
 
-        row.appendChild(nameCell);
-        row.appendChild(apolloCell);
-        row.appendChild(medplusCell);
-        row.appendChild(pharmeasyCell);
-        tableBody.appendChild(row);
-      });
-    }
+                nameCell.textContent = medicine.name;
+                apolloCell.textContent = `₹${medicine.apollo.toFixed(2)}`;
+                medplusCell.textContent = `₹${medicine.medplus.toFixed(2)}`;
+                pharmeasyCell.textContent = `₹${medicine.pharmeasy.toFixed(2)}`;
 
-    // Call the function to populate the table on page load
-    document.addEventListener('DOMContentLoaded', populateMedicineTable);
-  </script>
+                row.appendChild(nameCell);
+                row.appendChild(apolloCell);
+                row.appendChild(medplusCell);
+                row.appendChild(pharmeasyCell);
+                tableBody.appendChild(row);
+
+                // Display the table
+                table.style.display = 'table';
+            } else {
+                alert('Medicine not found!');
+            }
+        }
+    </script>
 </body>
 </html>
