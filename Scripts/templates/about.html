@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='index.css') }}">
+</head>
+
+<body>
+    <div class="box">
+        <div class="container">
+            <img src="{{ url_for('static', filename='KL.png') }}">
+            <h1>IMPACTECH-2K23</h1>
+        </div>
+        <div class="container2">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/text">Disease Estimates</a></li>
+                <li><a href="/text2">Procedure</a></li>
+                <li><a href="/voice">Voice</a></li>
+                <li><a href="/about">About</a></li>
+              </ul>
+        </div>
+        <div>
+            <h1>Team 184</h1>
+            <table border="1">
+                <tr>
+                    <td>Pattaswami Satya Sreekar</td>
+                    <td>Sree Nitya Kollu</td>
+                    <td>Sheik Amaan Hussain</td>
+                    <td>Meena Kumari </td>
+                    <td>Patel Sravya</td>
+                </tr>
+                <tr>
+                    <td>2110030065</td>
+                    <td>2110030149</td>
+                    <td>2110030093</td>
+                    <td>210030179</td>
+                    <td>2110030087</td>
+                </tr>
+                <tr>
+                    <td><img src="{{ url_for('static', filename='profile.jpg') }}" alt="" width="200px" height="200px"></td>
+                    <td><img src="{{ url_for('static', filename='Nitya.jpg') }}" alt="" width="200px" height="200px"></td>
+                    <td><img src="{{ url_for('static', filename='amaan.jpg') }}" alt="" width="150px" height="200px"></td>
+                    <td><img src="{{ url_for('static', filename='meena.jpg') }}" alt="" width="200px" height="200px"></td>
+                    <td><img src="{{ url_for('static', filename='sravya.jpg') }}" alt="" width="200px" height="200px"></td>
+
+                </tr>
+            </table>
+        </div>
+
+</body>
+
+</html>
