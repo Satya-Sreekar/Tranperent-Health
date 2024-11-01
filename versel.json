@@ -1,9 +1,20 @@
 {
     "version": 2,
     "builds": [
-        {"src": "main.py", "use": "@vercel/python"}
+      {
+        "src": "app.py",
+        "use": "@vercel/python"
+      }
     ],
     "routes": [
-        {"src": "/(.*)", "dest": "main.py"}
+      { "src": "/HPT", "dest": "app.py" },
+      { "src": "/HPT/text", "dest": "app.py" },
+      { "src": "/HPT/text2", "dest": "app.py" },
+      { "src": "/HPT/voice", "dest": "app.py" },
+      { "src": "/HPT/convert", "dest": "app.py" },
+      { "src": "/HPT/medp", "dest": "app.py" },
+      { "src": "/HPT/about", "dest": "app.py" },
+      { "src": "/", "dest": "app.py" }
     ]
-}
+  }
+  
